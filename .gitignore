@@ -100,4 +100,6 @@ lint/tmp/
 
 gas-report.txt
 
+.env 
+
 contracts/test/fuzzing/crytic-export
