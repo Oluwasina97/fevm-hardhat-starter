@@ -41,4 +41,7 @@ module.exports = {
         cache: "./cache",
         artifacts: "./artifacts",
     },
+    sourcify : {
+        enabled: true
+    }
 }

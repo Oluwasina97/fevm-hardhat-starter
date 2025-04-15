@@ -1,15 +1,24 @@
+// scripts/deploy.js
+
 const hre = require("hardhat");
 
-async function main() {const MessageStorage = await hre.ethers.getContractFactory("MessageStorage");
-    const messageStorage = await MessageStorage.deploy("Hello Filecoin");
+async function main() {
+  // Get the contract factory
+  const TodoList = await hre.ethers.getContractFactory("TodoList");
 
-    await messageStorage.waitForDeployment();
+  // Deploy the contract
+  const todoList = await TodoList.deploy();
 
-    const contractAddress = await messageStorage.getAddress();
-    console.log("MessageStorage deployed to:", contractAddress);
-    
+  // Wait for deployment to finish
+  await todoList.waitForDeployment();
+  const todoListAddress = await todoList.getAddress();
+
+  console.log("todoList deployed to:", todoListAddress);
 }
 
-main().catch((error) => {console.error(error);
-    process.exitCode = 1;
-})
+main()
+  .then(() => process.exit(0))
+  .catch((error) => {
+    console.error("Error deploying contract:", error);
+    process.exit(1);
+  });

@@ -16,6 +16,7 @@
   "license": "MIT",
   "dependencies": {
     "@glif/filecoin-address": "^2.0.43",
+    "@lighthouse-web3/sdk": "^0.3.7",
     "@nomicfoundation/hardhat-chai-matchers": "^2.0.2",
     "@nomicfoundation/hardhat-ethers": "^3.0.5",
     "@nomicfoundation/hardhat-network-helpers": "^1.0.9",
